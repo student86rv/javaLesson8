@@ -19,10 +19,10 @@ public class Main {
         root.left = node1;
         root.right = node2;
 		
-		//Node node3 = new Node(5);
-		//node1.left = node3;
-		//Node node4 = new Node(8);
-		//node1.right = node4;
+		Node node3 = new Node(5);
+		node1.left = node3;
+		Node node4 = new Node(8);
+		node1.right = node4;
 		
 		System.out.println("root:");
 		printTree(root);
@@ -41,9 +41,12 @@ public class Main {
     }
 	public static void sumTree(Node node1, Node node2) {
 		//result =>node1
-		
 		if (node1 == null && node2 == null) {
 			return;
+		} else if (node1 == null) {
+			node1 = new Node(0);
+		} else if (node2 == null) {
+			node2 = new Node(0);
 		}
 		node1.value += node2.value;
 		
